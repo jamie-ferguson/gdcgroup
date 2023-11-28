@@ -1,5 +1,5 @@
 # Application
-GDC is a Dockerised PHP / Laravel app enabling logged-in users to see affiliates within a given radius.
+GDCGroup is a Dockerised PHP / Laravel app enabling logged-in users to see affiliates within a given radius.
 
 ## Packages
 The app uses **Laravel Sail** to quickly and simply enable Dockerisation.
@@ -17,8 +17,8 @@ Git, Composer and Docker must be installed on the host machine.
 ## Installation
 1. Run the following commands to clone the app, create the authentication tables and create a test user
 ```bash
-$ git clone git@github.com:jamie-ferguson/gdc.git
-$ cd gdc
+$ git clone git@github.com:jamie-ferguson/gdcgroup.git
+$ cd gdcgroup
 $ composer install
 $ cp .env.example .env
 $ sail up -d
@@ -28,8 +28,8 @@ $ sail artisan db:seed
 $ sail npm install
 $ sail npm run build
 
-# note: the following command may have to be run after adding the .env variables
-$ sail artisan config:clear
+# note: tests can be run using
+$ sail artisan test
 ```
 2. App should be available at\
 http://127.0.0.1
@@ -38,10 +38,12 @@ username - test.user@gmail.com\
 password - testing1
 4. Default view is an empty dashboard. The affiliates page is hyperlinked at the top of the page in the nav section.
 5. If not already done so, add the affiliates.txt file to the storage/app/public directory.
-
+6. List fo affiliates within 100km of Dublin office should be visible at
+http://127.0.0.1/affiliates
 
 ## Files altered and added
 Files modified from vanilla Laravel app
+> .env.example\
 > README.md\
 > routes/web.php\
 > resources/views/layouts/navigation.blade.php\
