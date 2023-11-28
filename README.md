@@ -23,13 +23,16 @@ $ composer install
 $ cp .env.example .env
 $ sail up -d
 $ sail artisan key:generate
+# note: running the migrations should ask you to create a laravel database; say yes.
 $ sail artisan migrate
 $ sail artisan db:seed
 $ sail npm install
 $ sail npm run build
 
-# note: tests can be run using
+# tests can be run using
 $ sail artisan test
+# mariadb can be accessed using
+$ sail mariadb
 ```
 2. App should be available at\
 http://127.0.0.1
